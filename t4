@@ -1,0 +1,11 @@
+import re
+
+pattern = re.compile(r'\w{5,}@mail\.\w{2,3}')
+
+mail = input('Введите вашу почту: ') 
+result = re.findall(pattern, mail)
+
+if len(result) == 1:
+    print('Почта верна')
+else:
+    print(f'Почта {mail} не верна')
