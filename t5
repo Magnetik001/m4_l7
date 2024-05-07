@@ -1,0 +1,12 @@
+import re
+
+pattern = re.compile(r'\d\W\d{3}\W\d{3}\W\d{2}\W\d{2}')
+number = input('Введите номер телефона: ')
+
+result = re.findall(pattern, number)
+lst = []
+for i in result:
+    result_clear = re.sub('\W', '', i)
+    lst.append(result_clear)
+
+print(lst)
