@@ -1,0 +1,17 @@
+import re
+
+pattern = re.compile('\d{2}\W\d{2}\W\d{2,4}')
+datas = input('Введите любые даты: ')
+
+result = re.findall(pattern, datas)
+
+lst = []
+for i in result:
+    data = ''
+    for j in i:
+        if j.isdigit() == False:
+            j = '.'
+        data += j
+    lst.append(data)
+
+print(lst)
